@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фуршетные закуски под ключ</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; color: #2b2b2b; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  header { background: #1f1f1f; color: #fff; padding: 16px 0; position: sticky; top: 0; z-index: 10; }
+  header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 20px; font-weight: bold; }
+  .btn { display: inline-block; background: #c8a24a; color: #1f1f1f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; font-size: 16px; }
+  .btn:hover { background: #b08d3a; }
+  .hero { background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1600') center/cover; color: #fff; padding: 100px 0; text-align: center; }
+  .hero h1 { font-size: 42px; margin-bottom: 16px; }
+  .hero p { font-size: 20px; margin-bottom: 28px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  section { padding: 60px 0; }
+  h2 { font-size: 32px; margin-bottom: 32px; text-align: center; }
+  .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px; text-align: center; transition: .2s; }
+  .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-4px); }
+  .card h3 { font-size: 22px; margin-bottom: 8px; }
+  .price { font-size: 28px; color: #c8a24a; font-weight: bold; margin: 12px 0; }
+  .card ul { list-style: none; text-align: left; margin-top: 16px; }
+  .card ul li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .menu-item { background: #f9f6ef; padding: 20px; border-radius: 8px; }
+  .menu-item h4 { color: #c8a24a; margin-bottom: 8px; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; counter-reset: step; }
+  .step { background: #f9f6ef; padding: 24px; border-radius: 8px; position: relative; }
+  .step::before { counter-increment: step; content: counter(step); position: absolute; top: -16px; left: 20px; background: #c8a24a; color: #1f1f1f; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
+  .step h4 { margin: 16px 0 8px; }
+  form { max-width: 500px; margin: 0 auto; display: grid; gap: 14px; }
+  input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; font-family: inherit; }
+  textarea { resize: vertical; min-height: 80px; }
+  footer { background: #1f1f1f; color: #aaa; padding: 30px 0; text-align: center; font-size: 14px; }
+  @media (max-width: 600px) { .hero h1 { font-size: 28px; } .hero p { font-size: 16px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Фуршет<span style="color:#c8a24a">Pro</span></div>
+    <a href="#order" class="btn">Рассчитать стоимость</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Фуршетные закуски под ключ за 24 часа</h1>
+    <p>Выездной кейтеринг по городу и области. Готовим канапе, тарталетки и мини-закуски, привозим оборудование и сервируем столы. От 20 до 500 гостей.</p>
+    <a href="#order" class="btn">Оставить заявку</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Пакеты</h2>
+    <div class="packages">
+      <div class="card">
+        <h3>«Лёгкий»</h3>
+        <div class="price">1500 ₽ / чел</div>
+        <ul>
+          <li>6 видов канапе</li>
+          <li>Фруктовая нарезка</li>
+          <li>Вода и лимонады</li>
+          <li>Для деловых перерывов</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>«Стандарт»</h3>
+        <div class="price">2500 ₽ / чел</div>
+        <ul>
+          <li>10 видов закусок</li>
+          <li>Мини-бургеры, тарталетки</li>
+          <li>Лимонады и морсы</li>
+          <li>Для корпоративов и ДР</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>«Премиум»</h3>
+        <div class="price">4000 ₽ / чел</div>
+        <ul>
+          <li>15 видов закусок</li>
+          <li>Морепродукты, авторские канапе</li>
+          <li>Десерты и напитки</li>
+          <li>Для свадеб и приёмов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fafafa">
+  <div class="container">
+    <h2>Меню закусок</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><h4>Канапе</h4><p>С сёмгой, сыром, оливками, прошутто, индейкой.</p></div>
+      <div class="menu-item"><h4>Тарталетки</h4><p>С икрой, креветкой, грибами, паштетом.</p></div>
+      <div class="menu-item"><h4>Мини-бургеры</h4><p>С говядиной, курицей, овощами.</p></div>
+      <div class="menu-item"><h4>Фрукты и десерты</h4><p>Фруктовые шпажки, мини-эклеры, макарон.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Как мы работаем</h2>
+    <div class="steps">
+      <div class="step"><h4>Заявка</h4><p>Уточняем дату, количество гостей и площадку.</p></div>
+      <div class="step"><h4>Меню</h4><p>Подбираем закуски под формат и бюджет.</p></div>
+      <div class="step"><h4>Предоплата</h4><p>Фиксируем логистику и состав заказа.</p></div>
+      <div class="step"><h4>Мероприятие</h4><p>Привозим, сервируем, убираем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" style="background:#f9f6ef">
+  <div class="container">
+    <h2>Оставить заявку</h2>
+    <form action="https://formspree.io/f/ВАШ_ID" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <input type="date" name="date" required>
+      <input type="number" name="guests" placeholder="Количество гостей" min="20" required>
+      <textarea name="comment" placeholder="Комментарий (площадка, пожелания)"></textarea>
+      <button type="submit" class="btn">Отправить заявку</button>
+    </form>
+    <p style="text-align:center; margin-top:16px; font-size:14px; color:#777;">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>ФуршетPro © 2026 · Телефон: +7 (000) 000-00-00 · Email: info@example.ru</p>
+  </div>
+</footer>
+
+</body>
+</html>
