@@ -1,0 +1,28 @@
+<div style="max-width:500px;margin:0 auto;font-family:Arial,sans-serif">
+  <h3 style="text-align:center">Калькулятор стоимости фуршета</h3>
+  <label>Количество гостей: <b id="g">50</b></label>
+  <input type="range" id="guests" min="20" max="300" value="50" step="10" style="width:100%">
+  <label>Пакет:</label>
+  <select id="pack" style="width:100%;padding:10px;margin-bottom:12px">
+    <option value="1500">Лёгкий — 1500 ₽/чел</option>
+    <option value="2500" selected>Стандарт — 2500 ₽/чел</option>
+    <option value="4000">Премиум — 4000 ₽/чел</option>
+  </select>
+  <div style="background:#f9f6ef;padding:20px;border-radius:8px;text-align:center">
+    <div style="font-size:14px;color:#777">Примерная стоимость:</div>
+    <div id="total" style="font-size:28px;font-weight:bold;color:#c8a24a">125 000 ₽</div>
+  </div>
+</div>
+<script>
+  const g = document.getElementById('guests');
+  const p = document.getElementById('pack');
+  const out = document.getElementById('total');
+  const label = document.getElementById('g');
+  function calc() {
+    label.textContent = g.value;
+    out.textContent = (g.value * p.value).toLocaleString('ru-RU') + ' ₽';
+  }
+  g.addEventListener('input', calc);
+  p.addEventListener('change', calc);
+  calc();
+</script>
